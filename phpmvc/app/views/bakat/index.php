@@ -1,4 +1,10 @@
 <div class="container mt-3">
+
+<div class="row">
+  <div class="col-lg-6">
+    <?php Flasher::flash(); ?>
+  </div>
+</div>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#formModal">
   Insert Data Programmer
