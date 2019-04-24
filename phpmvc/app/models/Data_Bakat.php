@@ -21,5 +21,20 @@ class Data_Bakat
         $this->db->bind('nomor',$nomor);
         return $this->db->single();
     }
+
+    public function tambahData($data)
+    {
+        $query = "INSERT INTO bakat 
+                    VALUES
+                    ('', :nama, :bakat, :email)";
+        $this->db->query($query);
+        $this->db->bind('nama',$data['nama']);
+        $this->db->bind('bakat',$data['bakat']);
+        $this->db->bind('email',$data['email']);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 }
 ?>
