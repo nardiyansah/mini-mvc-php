@@ -24,6 +24,11 @@ class Bakat extends Controller
     {
         if( $this->model('Data_Bakat')->tambahData($_POST) > 0)
         {
+            Flasher::setFlash('berhasil','ditambahkan','success');
+            header('Location: ' . BASEURL . '/bakat');
+            exit;
+        }else{
+            Flasher::setFlash('gagal','ditambahkan','danger');
             header('Location: ' . BASEURL . '/bakat');
             exit;
         }
