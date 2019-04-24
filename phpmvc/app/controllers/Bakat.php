@@ -19,5 +19,14 @@ class Bakat extends Controller
         $this->view('bakat/detail',$data);
         $this->view('templates/footer');
     }
+
+    public function tambah()
+    {
+        if( $this->model('Data_Bakat')->tambahData($_POST) > 0)
+        {
+            header('Location: ' . BASEURL . '/bakat');
+            exit;
+        }
+    }
 }
 ?>
